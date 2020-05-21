@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     height: 50,
     marginTop: 10,
-    marginBottom: 10
+    marginBottom: 10,
   },
   inputStyle: {
     flex: 1,

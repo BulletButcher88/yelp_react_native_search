@@ -30,7 +30,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   container: {
-    marginBottom: 10
+    marginBottom: 9,
+    borderBottomWidth: 2,
+    borderBottomColor: "#DCDDC9"
   }
 })
 
