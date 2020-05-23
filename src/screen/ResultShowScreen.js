@@ -20,10 +20,12 @@ const ResultShowScreen = ({ navigation }) => {
 
   return (
 
-    <View>
+    <>
       <Text style={styles.title}>{result.name}</Text>
-      <Image style={styles.titleImage} source={{ url: result.image_url }} />
+      <Text style={styles.info}>{result.display_phone}        {result.is_closed ? <Text style={{ color: 'red' }}> CLOSED </Text> : <Text style={{ color: 'lime' }}>OPEN</Text>}        {result.location.city}</Text>
       <FlatList
+        style={styles.flexParent}
+        showsHorizontalScrollIndicator={true}
         data={result.photos}
         keyExtractor={(photo) => photo}
         renderItem={({ item }) => {
@@ -32,23 +34,32 @@ const ResultShowScreen = ({ navigation }) => {
             style={styles.photoStyle}
           />
         }} />
-    </View>
+    </>
 
   )
 }
 
 const styles = StyleSheet.create({
-  titleImage: {
-    height: 120,
-    width: "100%"
-  },
   photoStyle: {
     height: 200,
-    width: " 50%"
+    width: " 100%",
   },
   title: {
+    backgroundColor: '#222222',
+    color: 'white',
     fontWeight: 'bold',
-    fontSize: 27
+    fontSize: 60,
+    textAlign: 'center'
+  },
+  info: {
+    textAlign: 'center',
+    backgroundColor: '#222222',
+    color: 'white'
+  },
+  flexParent: {
+    flexDirection: "column",
+    height: 400,
+    width: 400,
   }
 })
 export default ResultShowScreen
