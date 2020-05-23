@@ -13,6 +13,9 @@ const SearchScreen = () => {
 
   const filterResultsByPrice = (price) => {
     return results.filter(result => {
+      if (!result.price === price) {
+        return null
+      }
       return result.price === price
     })
   }
